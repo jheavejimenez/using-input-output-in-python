@@ -20,7 +20,7 @@ def main():
 # check if it is valid
 def is_valid(credit_card_number):
     length = find_length(credit_card_number)
-    if (length == 13 or length == 15 or length == 16) and check_sum(credit_card_number):
+    if length in [13, 15, 16] and check_sum(credit_card_number):
         return 0
     else:
         return 1
@@ -31,7 +31,7 @@ def find_length(credit_card_number):
     count = 0
     while credit_card_number > 0:
         credit_card_number = credit_card_number // 10
-        count = count + 1
+        count += 1
 
     return count
 
@@ -42,7 +42,7 @@ def check_sum(number):
     count = 0
     while number > 0:
         number = number // 10
-        count = count + 1
+        count += 1
         if count % 2 == 0:
             credit_card_sum += number % 10
         else:

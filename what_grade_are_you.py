@@ -16,13 +16,13 @@ def main():
     # ask the user to enter a text
     string = input(str("Text: "))
 
-    for elem in range(0, len(string)):
+    for elem in range(len(string)):
         if str.isalpha(string[elem]):
             letter += 1
         if elem == 0 and string[elem] != ' ' or elem != len(string) - 1 and \
                 string[elem] == ' ' and string[elem + 1] != '':
             word += 1
-        if string[elem] == '.' or string[elem] == '?' or string[elem] == '!':
+        if string[elem] in ['.', '?', '!']:
             sentence += 1
 
     word = float(word)  # convert int to float
